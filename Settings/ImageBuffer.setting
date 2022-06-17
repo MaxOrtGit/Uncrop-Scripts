@@ -1,43 +1,99 @@
 {
 	Tools = ordered() {
-		image = MediaIn {
+		Image = MediaIn {
 			ExtentSet = true,
 			NameSet = true,
-			CustomData = { MediaProps = { MEDIA_NUM_LAYERS = 0, MEDIA_FORMAT_TYPE = "JPEG", MEDIA_PATH = "G:\\To Backup\\template\\orange.jpg", MEDIA_LAYER_DESC = {
-					}, MEDIA_NAME = "orange.jpg", MEDIA_HEIGHT = 1024, MEDIA_START_FRAME = 0, MEDIA_IS_SOURCE_RES = true, MEDIA_SRC_FRAME_RATE = 24, MEDIA_MARK_OUT = 0, MEDIA_WIDTH = 1024, MEDIA_NUM_FRAMES = 1, MEDIA_MARK_IN = 0, MEDIA_PAR = 1 } },
+			CustomData = {
+				MediaProps = {
+					MEDIA_AUDIO_TRACKS_DESC = {
+						{
+							MEDIA_AUDIO_BIT_DEPTH = 32,
+							MEDIA_AUDIO_FRAME_RATE = 24,
+							MEDIA_AUDIO_NUM_CHANNELS = 2,
+							MEDIA_AUDIO_SAMPLE_RATE = 48000,
+							MEDIA_AUDIO_START_TIME = 0,
+							MEDIA_AUDIO_TRACK_ID = "Timeline Audio",
+							MEDIA_AUDIO_TRACK_NAME = "Timeline Audio [main]"
+						}
+					},
+					MEDIA_AUDIO_TRACKS_NUM = 1,
+					MEDIA_HAS_AUDIO = true,
+					MEDIA_HEIGHT = 1080,
+					MEDIA_IS_SOURCE_RES = false,
+					MEDIA_MARK_IN = 0,
+					MEDIA_MARK_OUT = 119,
+					MEDIA_NAME = "Fusion Composition",
+					MEDIA_NUM_FRAMES = 120,
+					MEDIA_PAR = 1,
+					MEDIA_SRC_FRAME_RATE = 24,
+					MEDIA_START_FRAME = 0,
+					MEDIA_WIDTH = 1920
+				},
+				Path = {
+					Map = {
+						["Setting:"] = "Scripts:\\Settings\\"
+					}
+				},
+			},
 			Inputs = {
-				GlobalOut = Input { Value = 119, },
-				MediaID = Input { Value = "ed747b5c-0e06-49a0-bf0d-dbef0b3aad6c", },
+				GlobalOut = Input { Value = 238, },
 				AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
 				Layer = Input {
 					Value = Text {
 					},
 				},
-				ClipTimeEnd = Input { Value = 0, },
+				ClipTimeEnd = Input { Value = 119, },
 				HoldLastFrame = Input { Value = 119, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				LeftAudio = Input {
+					SourceOp = "Left",
+					Source = "Data",
+				},
+				RightAudio = Input {
+					SourceOp = "Right",
+					Source = "Data",
+				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 220, 148.5 } },
+			ViewInfo = OperatorInfo { Pos = { 55, 49.5 } },
+		},
+		Left = AudioDisplay {
+		},
+		Right = AudioDisplay {
+			CtrlWZoom = false,
 		},
 		Pan = Transform {
 			NameSet = true,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Scripts:\\Settings\\"
+					}
+				},
+			},
 			Inputs = {
-				Center = Input { Value = { 0.5, 1 }, },
+				Size = Input { Value = 0.5, },
 				Input = Input {
-					SourceOp = "image",
+					SourceOp = "Image",
 					Source = "Output",
 				},
 			},
-			ViewInfo = OperatorInfo { Pos = { 440, 148.5 } },
+			ViewInfo = OperatorInfo { Pos = { 275, 49.5 } },
 		},
 		OriginalSaver = Saver {
 			NameSet = true,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Scripts:\\Settings\\"
+					}
+				},
+			},
 			Inputs = {
 				["OpenEXRFormat.CompressionLevel"] = Input { Value = 4, },
 				ProcessWhenBlendIs00 = Input { Value = 0, },
 				Clip = Input {
 					Value = Clip {
-						Filename = "G:\\export\\Original.png",
+						Filename = "C:\\export\\Original.png",
 						FormatID = "PNGFormat",
 						Length = 0,
 						Saving = true,
@@ -47,7 +103,6 @@
 						Loop = 1,
 						AspectMode = 0,
 						Depth = 0,
-						TimeCode = 0,
 						GlobalStart = -2000000000,
 						GlobalEnd = 0
 					},
@@ -55,24 +110,31 @@
 				OutputFormat = Input { Value = FuID { "PNGFormat" }, },
 				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 				Input = Input {
-					SourceOp = "image",
+					SourceOp = "Image",
 					Source = "Output",
 				},
 				FrameSavedScriptNest = Input { Value = 1, },
 				FrameRenderScript = Input { Value = "if comp.CurrentTime > 0 then\nBlend = 0\nelse\nBlend = 1\nend", },
 				["PNGFormat.PreDivide"] = Input { Value = 1, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 385, 49.5 } },
+			ViewInfo = OperatorInfo { Pos = { 220, -49.5 } },
 		},
 		ExportSaver = Saver {
 			CtrlWZoom = false,
 			NameSet = true,
+			CustomData = {
+				Path = {
+					Map = {
+						["Setting:"] = "Scripts:\\Settings\\"
+					}
+				},
+			},
 			Inputs = {
 				["OpenEXRFormat.CompressionLevel"] = Input { Value = 4, },
 				ProcessWhenBlendIs00 = Input { Value = 0, },
 				Clip = Input {
 					Value = Clip {
-						Filename = "G:\\export\\Export.png",
+						Filename = "C:\\export\\Export.png",
 						FormatID = "PNGFormat",
 						Length = 0,
 						Saving = true,
@@ -82,7 +144,6 @@
 						Loop = 1,
 						AspectMode = 0,
 						Depth = 0,
-						TimeCode = 0,
 						GlobalStart = -2000000000,
 						GlobalEnd = 0
 					},
@@ -96,7 +157,7 @@
 				FrameRenderScript = Input { Value = "if comp.CurrentTime > 0 then\nBlend = 0\nelse\nBlend = 1\nend", },
 				["PNGFormat.PreDivide"] = Input { Value = 1, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 660, 148.5 } },
+			ViewInfo = OperatorInfo { Pos = { 495, 49.5 } },
 		}
 	},
 	ActiveTool = "ExportSaver"
