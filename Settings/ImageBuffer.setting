@@ -1,0 +1,111 @@
+{
+	Tools = ordered() {
+		image = MediaIn {
+			ExtentSet = true,
+			NameSet = true,
+			CustomData = { MediaProps = { MEDIA_NUM_LAYERS = 0, MEDIA_FORMAT_TYPE = "JPEG", MEDIA_PAR = 1, MEDIA_LAYER_DESC = {
+					}, MEDIA_NAME = "pink.jpg", MEDIA_PATH = "G:\\To Backup\\template\\pink.jpg", MEDIA_START_FRAME = 0, MEDIA_IS_SOURCE_RES = true, MEDIA_SRC_FRAME_RATE = 24, MEDIA_MARK_OUT = 0, MEDIA_WIDTH = 1024, MEDIA_NUM_FRAMES = 1, MEDIA_MARK_IN = 0, MEDIA_HEIGHT = 1024 } },
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				MediaID = Input { Value = "f52b191e-4862-4f83-8e77-b7a1c9811184", },
+				AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
+				Layer = Input {
+					Value = Text {
+					},
+				},
+				ClipTimeEnd = Input { Value = 0, },
+				HoldLastFrame = Input { Value = 119, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 55, 148.5 } },
+		},
+		Pan = Transform {
+			NameSet = true,
+			Inputs = {
+				Center = Input { Value = { 0.25, 0.4 }, },
+				Size = Input { Value = 0.75, },
+				Input = Input {
+					SourceOp = "image",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 440, 148.5 } },
+		},
+		ExportSaver = Saver {
+			NameSet = true,
+			Inputs = {
+				["OpenEXRFormat.CompressionLevel"] = Input { Value = 4, },
+				ProcessWhenBlendIs00 = Input { Value = 0, },
+				Clip = Input {
+					Value = Clip {
+						Filename = "G:\\export\\Export.png",
+						FormatID = "PNGFormat",
+						Length = 0,
+						Saving = true,
+						TrimIn = 0,
+						ExtendFirst = 0,
+						ExtendLast = 0,
+						Loop = 1,
+						AspectMode = 0,
+						Depth = 0,
+						TimeCode = 0,
+						GlobalStart = -2000000000,
+						GlobalEnd = 0
+					},
+				},
+				OutputFormat = Input { Value = FuID { "PNGFormat" }, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				Input = Input {
+					SourceOp = "Pan",
+					Source = "Output",
+				},
+				["PNGFormat.PreDivide"] = Input { Value = 1, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 660, 148.5 } },
+		},
+		OriginalSaver = Saver {
+			NameSet = true,
+			Inputs = {
+				["OpenEXRFormat.CompressionLevel"] = Input { Value = 4, },
+				ProcessWhenBlendIs00 = Input { Value = 0, },
+				Clip = Input {
+					Value = Clip {
+						Filename = "G:\\export\\Original.png",
+						FormatID = "PNGFormat",
+						Length = 0,
+						Saving = true,
+						TrimIn = 0,
+						ExtendFirst = 0,
+						ExtendLast = 0,
+						Loop = 1,
+						AspectMode = 0,
+						Depth = 0,
+						TimeCode = 0,
+						GlobalStart = -2000000000,
+						GlobalEnd = 0
+					},
+				},
+				OutputFormat = Input { Value = FuID { "PNGFormat" }, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				Input = Input {
+					SourceOp = "image",
+					Source = "Output",
+				},
+				["PNGFormat.PreDivide"] = Input { Value = 1, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 220, 49.5 } },
+		},
+		MediaOut1 = MediaOut {
+			CtrlWZoom = false,
+			Inputs = {
+				Index = Input { Value = "0", },
+				Input = Input {
+					SourceOp = "ExportSaver",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 880, 148.5 } },
+		}
+	},
+	ActiveTool = "MediaOut1"
+}

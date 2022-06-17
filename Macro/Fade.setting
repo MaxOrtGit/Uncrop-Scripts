@@ -1,0 +1,132 @@
+{
+	Tools = ordered() {
+		Fade1 = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Merge",
+					Source = "Foreground",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Merge",
+					Source = "Center",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Merge",
+					Source = "Size",
+					Default = 0.5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Image",
+					Source = "MediaID",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "TransparentMerge",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "TransparentMerge",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Merge = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Image",
+							Source = "Output",
+						},
+						Size = Input { Value = 0.5, },
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 165, 49.5 } },
+				},
+				Image = MediaIn {
+					ExtentSet = true,
+					CtrlWShown = false,
+					NameSet = true,
+					CustomData = {
+						MediaProps = {
+							MEDIA_NUM_LAYERS = 0,
+							MEDIA_FORMAT_TYPE = "PNG",
+							MEDIA_PATH = "G:\\export\\2-0.25-0.5-1.0.png",
+							MEDIA_LAYER_DESC = {
+							},
+							MEDIA_NAME = "2-0.25-0.5-1.0.png",
+							MEDIA_HEIGHT = 1024,
+							MEDIA_START_FRAME = 0,
+							MEDIA_IS_SOURCE_RES = true,
+							MEDIA_SRC_FRAME_RATE = 24,
+							MEDIA_MARK_OUT = 0,
+							MEDIA_WIDTH = 1024,
+							MEDIA_NUM_FRAMES = 1,
+							MEDIA_MARK_IN = 0,
+							MEDIA_PAR = 1
+						}
+					},
+					Inputs = {
+						GlobalOut = Input { Value = 299, },
+						MediaID = Input { Value = "76f236a3-2ff3-4c48-a610-a7d207eeabba", },
+						AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
+						Layer = Input {
+							Value = Text {
+							},
+						},
+						ClipTimeEnd = Input { Value = 0, },
+						HoldLastFrame = Input { Value = 299, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LeftAudio = Input {
+							SourceOp = "Left_1",
+							Source = "Data",
+						},
+						RightAudio = Input {
+							SourceOp = "Right_1",
+							Source = "Data",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 165, -49.5 } },
+				},
+				Left_1 = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				Right_1 = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				TransparentMerge = Merge {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Transparent",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Merge",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 275, 49.5 } },
+				},
+				Transparent = Background {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 275, -49.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "Fade1"
+}
