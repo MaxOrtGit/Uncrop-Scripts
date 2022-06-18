@@ -8,7 +8,7 @@ initial setup:
 4. go to fusion in the menu bar then Fusion Settings
 5. click path map then open up the Macros folder and add Fade.settings (In Uncrop-Scripts Macro folder).
 6. open the Scripts folder and add the comp folder
-7. download python https://www.python.org/downloads/ AT THE BOTTOM SELECT "Add Python to PATH" click install. after that click the extend enviormental variable length button if there
+7. download python https://www.python.org/downloads/ AT THE BOTTOM SELECT "Add Python to PATH" click install. after that click the extend environment variable length button if there
 8. reset computer
 9. open a command prompt as administrator 
 10. run the following commands
@@ -29,6 +29,7 @@ setup for padding:
 1. click on the fusion tab at the bottom (the wand)
 2. drag the ImageBuffer.setting file under the Settings folder into the nodes space (if there are 2 media outs then delite the second one)
 3. set the export path for both OriginalSaver and ExportSaver (have OriginalSaver end with Original.png and ExportSaver end with Export.png)
+4. if canvas isn't the right size go to File > Project Settings then change timeline resolution to 1024 x 1024
 
 add padding to an image:
 1. add image to media pool
@@ -44,10 +45,10 @@ combine images:
 1. go to media pool root folder and right click > New Bin and name it ToConvert (case sensitive)
 2. drag all images with the formatted names into the folder
 3. add last image and name it the image number (if it is the 8th image name it "8.png") all files must be named in file explorer
-4. drag first clip onto time line
+4. drag first clip onto timeline
 5. hover over it and open fusion
 6. select MediaIn1
 7. go to menu bar and click Workspace > Scripts > VariablePan
 
 
-If you have any questions dont be scared to msg or email me. My email is maxrort@gmail.com
+If you have any questions don't be scared to msg or email me. My email is maxrort@gmail.com
