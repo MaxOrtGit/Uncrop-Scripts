@@ -3,8 +3,7 @@
 		Image = MediaIn {
 			ExtentSet = true,
 			NameSet = true,
-			CustomData = {
-				MediaProps = {
+			CustomData = { Path = { Map = { ["Setting:"] = "Scripts:\\Settings\\" } }, MediaProps = {
 					MEDIA_AUDIO_TRACKS_DESC = {
 						{
 							MEDIA_AUDIO_BIT_DEPTH = 32,
@@ -18,7 +17,7 @@
 					},
 					MEDIA_AUDIO_TRACKS_NUM = 1,
 					MEDIA_HAS_AUDIO = true,
-					MEDIA_HEIGHT = 1080,
+					MEDIA_HEIGHT = 1024,
 					MEDIA_IS_SOURCE_RES = false,
 					MEDIA_MARK_IN = 0,
 					MEDIA_MARK_OUT = 119,
@@ -27,14 +26,8 @@
 					MEDIA_PAR = 1,
 					MEDIA_SRC_FRAME_RATE = 24,
 					MEDIA_START_FRAME = 0,
-					MEDIA_WIDTH = 1920
-				},
-				Path = {
-					Map = {
-						["Setting:"] = "Scripts:\\Settings\\"
-					}
-				},
-			},
+					MEDIA_WIDTH = 1024,
+				}, },
 			Inputs = {
 				GlobalOut = Input { Value = 238, },
 				AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
@@ -61,33 +54,56 @@
 		Right = AudioDisplay {
 			CtrlWZoom = false,
 		},
-		Pan = Transform {
+		WatermarkRemoverMerge = Merge {
 			NameSet = true,
-			CustomData = {
-				Path = {
-					Map = {
-						["Setting:"] = "Scripts:\\Settings\\"
-					}
-				},
-			},
 			Inputs = {
-				Size = Input { Value = 0.5, },
-				Input = Input {
+				Background = Input {
+					SourceOp = "Transparent",
+					Source = "Output",
+				},
+				Foreground = Input {
 					SourceOp = "Image",
 					Source = "Output",
 				},
+				PerformDepthMerge = Input { Value = 0, },
+				EffectMask = Input {
+					SourceOp = "Mask",
+					Source = "Mask",
+				}
 			},
-			ViewInfo = OperatorInfo { Pos = { 275, 49.5 } },
+			ViewInfo = OperatorInfo { Pos = { 220, 49.5 } },
+		},
+		Transparent = Background {
+			NameSet = true,
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 1024, },
+				Height = Input { Value = 1024, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+				TopLeftAlpha = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 220, -16.5 } },
+		},
+		Mask = RectangleMask {
+			NameSet = true,
+			Inputs = {
+				Filter = Input { Value = FuID { "Fast Gaussian" }, },
+				Invert = Input { Value = 1, },
+				MaskWidth = Input { Value = 1024, },
+				MaskHeight = Input { Value = 1024, },
+				PixelAspect = Input { Value = { 1, 1 }, },
+				UseFrameFormatSettings = Input { Value = 1, },
+				ClippingMode = Input { Value = FuID { "None" }, },
+				Center = Input { Value = { 0.9609375, 0.0078125 }, },
+				Width = Input { Value = 0.08, },
+				Height = Input { Value = 0.016, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 220, 16.5 } },
 		},
 		OriginalSaver = Saver {
 			NameSet = true,
-			CustomData = {
-				Path = {
-					Map = {
-						["Setting:"] = "Scripts:\\Settings\\"
-					}
-				},
-			},
+			CustomData = { Path = { Map = { ["Setting:"] = "Scripts:\\Settings\\" } }, },
 			Inputs = {
 				["OpenEXRFormat.CompressionLevel"] = Input { Value = 4, },
 				ProcessWhenBlendIs00 = Input { Value = 0, },
@@ -103,6 +119,7 @@
 						Loop = 1,
 						AspectMode = 0,
 						Depth = 0,
+						TimeCode = 0,
 						GlobalStart = -2000000000,
 						GlobalEnd = 0
 					},
@@ -117,18 +134,23 @@
 				FrameRenderScript = Input { Value = "if comp.CurrentTime > 0 then\nBlend = 0\nelse\nBlend = 1\nend", },
 				["PNGFormat.PreDivide"] = Input { Value = 1, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 220, -49.5 } },
+			ViewInfo = OperatorInfo { Pos = { 220, -82.5 } },
+		},
+		Pan = Transform {
+			NameSet = true,
+			CustomData = { Path = { Map = { ["Setting:"] = "Scripts:\\Settings\\" } }, },
+			Inputs = {
+				Input = Input {
+					SourceOp = "WatermarkRemoverMerge",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 385, 49.5 } },
 		},
 		ExportSaver = Saver {
 			CtrlWZoom = false,
 			NameSet = true,
-			CustomData = {
-				Path = {
-					Map = {
-						["Setting:"] = "Scripts:\\Settings\\"
-					}
-				},
-			},
+			CustomData = { Path = { Map = { ["Setting:"] = "Scripts:\\Settings\\" } }, },
 			Inputs = {
 				["OpenEXRFormat.CompressionLevel"] = Input { Value = 4, },
 				ProcessWhenBlendIs00 = Input { Value = 0, },
@@ -144,6 +166,7 @@
 						Loop = 1,
 						AspectMode = 0,
 						Depth = 0,
+						TimeCode = 0,
 						GlobalStart = -2000000000,
 						GlobalEnd = 0
 					},
@@ -157,7 +180,7 @@
 				FrameRenderScript = Input { Value = "if comp.CurrentTime > 0 then\nBlend = 0\nelse\nBlend = 1\nend", },
 				["PNGFormat.PreDivide"] = Input { Value = 1, },
 			},
-			ViewInfo = OperatorInfo { Pos = { 495, 49.5 } },
+			ViewInfo = OperatorInfo { Pos = { 550, 49.5 } },
 		}
 	},
 	ActiveTool = "ExportSaver"
