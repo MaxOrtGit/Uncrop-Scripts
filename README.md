@@ -25,11 +25,14 @@ pipwin install six
 pipwin install rtree
 pipwin install geopandas
 
+
 setup for padding:
 1. click on the fusion tab at the bottom (the wand)
 2. drag the ImageBuffer.setting file under the Settings folder into the nodes space (if there are 2 media outs then delite the second one)
 3. set the export path for both OriginalSaver and ExportSaver (have OriginalSaver end with Original.png and ExportSaver end with Export.png)
 4. if canvas isn't the right size go to File > Project Settings then change timeline resolution to 1024 x 1024
+5. go back to the edit tab and make the Fusion Composition a handful amount of frames wide
+
 
 add padding to an image:
 1. add image to media pool
@@ -37,7 +40,7 @@ add padding to an image:
 3. drag image from media pool to the Clip Name property at the top of Tools
 4. select Pan node and set the Center and Size
 5. go to menu bar and click Workspace > Scripts > Export
-6. go to export folder (path of saver nodes) and add Export0001.png to AI software (keep other image for later)
+6. go to export folder (path of saver nodes) and add Export0001.png to image generating software (keep other image for later)
 7. repeat for every image
 
 
@@ -51,4 +54,4 @@ combine images:
 7. go to menu bar and click Workspace > Scripts > VariablePan
 
 
-If you have any questions don't be scared to msg or email me. My email is maxrort@gmail.com
+If you have any questions or make anything don't be scared to msg or email me. My email is maxrort@gmail.com
