@@ -77,7 +77,7 @@
 							},
 						},
 						ClipTimeEnd = Input { Value = 0, },
-						HoldLastFrame = Input { Value = 299, },
+						HoldLastFrame = Input { Value = 999999, },
 						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
 						LeftAudio = Input {
 							SourceOp = "Left_1",
