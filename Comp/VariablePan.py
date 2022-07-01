@@ -4,7 +4,7 @@ import time
 
 
 # change theres variables if the masks and images arent connecting properly
-image_wait = 1.5 #default 1.5
+image_wait = 1.0 #default 1.5
 mask_wait = 0.25 #default 0.25
   
 if __name__ == "__main__":
@@ -22,7 +22,7 @@ if __name__ == "__main__":
       break
 
   clips = convert_folder.GetClipList()
-  clips.sort(key=lambda x: x.GetName().split("-")[0])
+  clips.sort(key=lambda x: int(x.GetName().split("-")[0].split(".")[0]))
   
   c1 = clips[0]
   

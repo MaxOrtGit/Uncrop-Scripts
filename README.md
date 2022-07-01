@@ -27,11 +27,12 @@ pipwin install geopandas
 
 
 setup for padding:
-1. click on the fusion tab at the bottom (the wand)
-2. drag the ImageBuffer.setting file under the Settings folder into the nodes space (if there are 2 media outs then delite the second one)
-3. set the export path for both OriginalSaver and ExportSaver (have OriginalSaver end with Original.png and ExportSaver end with Export.png)
-4. if canvas isn't the right size go to File > Project Settings then change timeline resolution to 1024 x 1024
-5. go back to the edit tab and make the Fusion Composition a handful amount of frames wide
+1. open buffer project
+2. click on the fusion tab at the bottom (the wand)
+3. drag the ImageBuffer.setting file under the Settings folder into the nodes space (if there are 2 media outs then delite the second one)
+4. set the export path for both OriginalSaver and ExportSaver (have OriginalSaver end with Original.png and ExportSaver end with Export.png)
+5. if canvas isn't the right size go to File > Project Settings then change timeline resolution to 1024 x 1024
+6. go back to the edit tab and make the Fusion Composition a handful amount of frames wide for performance
 
 
 add padding to an image:
@@ -52,6 +53,7 @@ combine images:
 5. hover over it and open fusion
 6. select MediaIn1
 7. go to menu bar and click Workspace > Scripts > VariablePan
+8. dont click anything
 
 
 If you have any questions or make anything don't be scared to msg or email me. My email is maxrort@gmail.com
