@@ -289,7 +289,7 @@
 					Inputs = {
 						Size = Input {
 							Value = 16384,
-							Expression = "iif(StartFrameandSize.Y > EndFrameandSize.Y, iif(time > StartFrameandSize.X and time < EndFrameandSize.X, (((EndFrameandSize.Y - (StartFrameandSize.Y - 1))^(1 / (EndFrameandSize.X - StartFrameandSize.X)))^(time - StartFrameandSize.X) + StartFrameandSize.Y - 1), iif(time > StartFrameandSize.X, EndFrameandSize.Y, StartFrameandSize.Y)), iif(time > StartFrameandSize.X and time < EndFrameandSize.X, (((StartFrameandSize.Y - (EndFrameandSize.Y - 1))^(1 / (StartFrameandSize.X - EndFrameandSize.X)))^(time - EndFrameandSize.X) + EndFrameandSize.Y - 1), iif(time > StartFrameandSize.X, EndFrameandSize.Y, StartFrameandSize.Y)))",
+							Expression = "iif(StartFrameandSize.Y < EndFrameandSize.Y, iif(time > StartFrameandSize.X and time < EndFrameandSize.X, (((EndFrameandSize.Y - (StartFrameandSize.Y - 1))^(1 / (EndFrameandSize.X - StartFrameandSize.X)))^(time - StartFrameandSize.X) + StartFrameandSize.Y - 1), iif(time > StartFrameandSize.X, EndFrameandSize.Y, StartFrameandSize.Y)), iif(time > StartFrameandSize.X and time < EndFrameandSize.X, (((StartFrameandSize.Y - (EndFrameandSize.Y - 1))^(1 / (StartFrameandSize.X - EndFrameandSize.X)))^(time - EndFrameandSize.X) + EndFrameandSize.Y - 1), iif(time > StartFrameandSize.X, EndFrameandSize.Y, StartFrameandSize.Y)))",
 						},
 						StartFrameandSize = Input { Value = { 0, 1 }, },
 						EndFrameandSize = Input { Value = { 120, 8 }, },
