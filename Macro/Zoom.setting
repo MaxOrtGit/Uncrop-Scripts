@@ -1,0 +1,323 @@
+{
+	Tools = ordered() {
+		Zoom = MacroOperator {
+			Inputs = ordered() {
+				MainInput1 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Input",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Center",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Pivot",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "StartFrameandSize",
+					Page = "Controls",
+					DefaultX = 0,
+					DefaultY = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "EndFrameandSize",
+					Page = "Controls",
+					DefaultX = 120,
+					DefaultY = 8,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "UseSizeAndAspect",
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Aspect",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Angle",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "FlipHoriz",
+					ControlGroup = 8,
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "FlipVert",
+					ControlGroup = 8,
+					Default = 0,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Edges",
+					Default = 0,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "FilterMethod",
+					Default = 2,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "WindowMethod",
+					Default = 0,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "InvertTransform",
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "FlattenTransform",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Width",
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Height",
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "UseFrameFormatSettings",
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Blend",
+					Default = 1,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "ProcessWhenBlendIs00",
+					Default = 0,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "ProcessRed",
+					Name = "Process",
+					ControlGroup = 21,
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "ProcessGreen",
+					ControlGroup = 21,
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "ProcessBlue",
+					ControlGroup = 21,
+					Default = 1,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "ProcessAlpha",
+					ControlGroup = 21,
+					Default = 1,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Blank1",
+				},
+				Input26 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "ApplyMaskInverted",
+					Default = 0,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "MultiplyByMask",
+					Default = 0,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "FitMask",
+				},
+				Input29 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Blank2",
+				},
+				Input30 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "MaskChannel",
+					Default = 3,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "MaskLow",
+					ControlGroup = 28,
+					Default = 0,
+				},
+				Input32 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "MaskHigh",
+					ControlGroup = 28,
+					Default = 1,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "MaskClipBlack",
+					Name = "Black",
+					Width = 0.5,
+					Default = 1,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "MaskClipWhite",
+					Name = "White",
+					Width = 0.5,
+					Default = 1,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Blank4",
+				},
+				Input36 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "UseObject",
+					Default = 0,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "UseMaterial",
+					Default = 0,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "CorrectEdges",
+				},
+				Input39 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "ObjectID",
+					ControlGroup = 35,
+					Default = 0,
+				},
+				Input40 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "MaterialID",
+					ControlGroup = 35,
+					Default = 0,
+				},
+				Input41 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Blank5",
+				},
+				Input42 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "MotionBlur",
+					Default = 0,
+				},
+				Input43 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Quality",
+					Default = 2,
+				},
+				Input44 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "ShutterAngle",
+					Default = 180,
+				},
+				Input45 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "CenterBias",
+					Default = 0,
+				},
+				Input46 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "SampleSpread",
+					Default = 1,
+				},
+				Input47 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Blank6",
+				},
+				Input48 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "UseGPU",
+					Default = 1,
+				},
+				Input49 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "HideInputs",
+					Default = 0,
+				},
+				Input50 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "Comments",
+				},
+				Input51 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "FrameRenderScript",
+				},
+				Input52 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "StartRenderScript",
+				},
+				Input53 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "EndRenderScript",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Transform",
+					Source = "EffectMask",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Transform",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Transform = Transform {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Size = Input {
+							Value = 16384,
+							Expression = "iif(StartFrameandSize.Y > EndFrameandSize.Y, iif(time > StartFrameandSize.X and time < EndFrameandSize.X, (((EndFrameandSize.Y - (StartFrameandSize.Y - 1))^(1 / (EndFrameandSize.X - StartFrameandSize.X)))^(time - StartFrameandSize.X) + StartFrameandSize.Y - 1), iif(time > StartFrameandSize.X, EndFrameandSize.Y, StartFrameandSize.Y)), iif(time > StartFrameandSize.X and time < EndFrameandSize.X, (((StartFrameandSize.Y - (EndFrameandSize.Y - 1))^(1 / (StartFrameandSize.X - EndFrameandSize.X)))^(time - EndFrameandSize.X) + EndFrameandSize.Y - 1), iif(time > StartFrameandSize.X, EndFrameandSize.Y, StartFrameandSize.Y)))",
+						},
+						StartFrameandSize = Input { Value = { 0, 1 }, },
+						EndFrameandSize = Input { Value = { 120, 8 }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 1705, 49.5 } },
+					UserControls = ordered() {
+						StartFrameandSize = {
+							LINKS_Name = "Start Frame and Size",
+							LINKID_DataType = "Point",
+							INPID_InputControl = "OffsetControl",
+							INP_DefaultX = 0,
+							INP_DefaultY = 1,
+							ICS_ControlPage = "Controls",
+							INP_External = false,
+						},
+						EndFrameandSize = {
+							LINKS_Name = "End Frame and Size",
+							LINKID_DataType = "Point",
+							INPID_InputControl = "OffsetControl",
+							INP_DefaultX = 0,
+							INP_DefaultY = 1,
+							ICS_ControlPage = "Controls",
+							INP_External = false,
+						}
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "Zoom"
+}

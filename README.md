@@ -6,7 +6,7 @@ initial setup:
 2. download files from github.
 3. create new project for adding buffer to your images
 4. go to fusion in the menu bar then Fusion Settings
-5. click path map then open up the Macros folder and add Fade.settings (In Uncrop-Scripts Macro folder).
+5. click path map then open up the Macros folder and add macros from macro folder.
 6. open the Scripts folder and add the comp folder
 7. download python https://www.python.org/downloads/ AT THE BOTTOM SELECT "Add Python to PATH" click install. after that click the extend environment variable length button if there
 8. reset computer
@@ -46,6 +46,7 @@ add padding to an image:
 
 
 combine images:
+0. create a project and set frame rate and resolution under File > Project Settings
 1. go to media pool root folder and right click > New Bin and name it ToConvert (case sensitive)
 2. drag all images with the formatted names into the folder
 3. add last image and name it the image number (if it is the 8th image name it "8.png") all files must be named in file explorer
@@ -55,5 +56,9 @@ combine images:
 7. go to menu bar and click Workspace > Scripts > VariablePan
 8. dont click anything
 
+to zoom out:
+1. select last image in time line
+2. hit shift + space and add the zoom tool
+3. set the Start Frame and Size and the End Frame and Size
 
 If you have any questions or make anything don't be scared to msg or email me. My email is maxrort@gmail.com

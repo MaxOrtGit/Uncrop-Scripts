@@ -1,6 +1,6 @@
 {
 	Tools = ordered() {
-		Fade1 = MacroOperator {
+		Fade = MacroOperator {
 			Inputs = ordered() {
 				MainInput1 = InstanceInput {
 					SourceOp = "Merge",
@@ -128,5 +128,5 @@
 			},
 		}
 	},
-	ActiveTool = "Fade1"
+	ActiveTool = "Fade"
 }
