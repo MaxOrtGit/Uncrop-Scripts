@@ -61,4 +61,4 @@ to zoom out:
 2. hit shift + space and add the zoom tool
 3. set the Start Frame and Size and the End Frame and Size
 
-If you have any questions or make anything don't be scared to msg or email me. My email is maxrort@gmail.com
+If you have any questions or make anything don't be scared to msg or email me. My discord is pig3253#2053 and my email is maxrort@gmail.com
