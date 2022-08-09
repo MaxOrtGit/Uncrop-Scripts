@@ -3,7 +3,7 @@ from lib import poly
 import time
 
 
-# change theres variables if the masks and images arent connecting properly
+# change the variables if the masks and images arent connecting properly
 image_wait = 0 #default 0
 mask_wait = 0.5 #default 0.5
   
